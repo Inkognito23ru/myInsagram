@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.osipov.myinsagran.views.KeyboardAwareScrollView
+    android:id="@+id/scrol_view"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LoginActivity">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/instagram_image"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/instagram_pic"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="120dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/email_input"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/instagram_image"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        style="@style/login_input"
+        />
+
+    <EditText
+        android:id="@+id/password_input"
+        app:layout_constraintTop_toBottomOf="@id/email_input"
+        android:hint="Password"
+        android:inputType="textPassword"
+        style="@style/login_input"
+        />
+
+    <Button
+        android:id="@+id/login_btn"
+        app:layout_constraintTop_toBottomOf="@id/password_input"
+        android:text="Log in"
+        style="@style/login_btn"
+        />
+
+    <TextView
+        android:id="@+id/create_account_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/create_account"
+        android:gravity="center"
+        android:background="@drawable/top_border_grey"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ru.osipov.myinsagran.views.KeyboardAwareScrollView>

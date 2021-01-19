@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "844328238815",
+    "project_id": "myinsagran",
+    "storage_bucket": "myinsagran.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844328238815:android:bd39e132fc659753ee336a",
+        "android_client_info": {
+          "package_name": "ru.osipov.myinsagran"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844328238815-d0r4ekbad7b8gaj25cd0ibl776vqia8g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.osipov.myinsagran",
+            "certificate_hash": "2b984730dcb9cc4eb2e02e36deaa5f9c53e28d7e"
+          }
+        },
+        {
+          "client_id": "844328238815-ka3asvgml9rhd50ckep30abmb7nh3sp2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRf-TQ9aq9i6xueLeY33MG00wk-wRGwOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844328238815-ka3asvgml9rhd50ckep30abmb7nh3sp2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
