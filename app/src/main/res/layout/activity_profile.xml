@@ -17,8 +17,8 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/user_name_text"
                 style="@style/toolbar_title"
-                android:text="alex.bezhan"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"/>
@@ -37,7 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="1:1"
-        android:src="@drawable/android_picture"
+        android:src="@drawable/person_icon"
         app:civ_border_color="@color/grey"
         app:civ_border_width="1dp"
         android:layout_marginStart="15dp"

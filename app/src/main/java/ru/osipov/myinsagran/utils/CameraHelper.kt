@@ -10,7 +10,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-class CameraPictureTaker(private val activity: Activity){
+class CameraHelper(private val activity: Activity){
 
     val timeStamp: String = SimpleDateFormat(
         "yyyyMMdd_HHmmss",

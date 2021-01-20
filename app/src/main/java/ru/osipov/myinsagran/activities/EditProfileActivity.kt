@@ -4,13 +4,12 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.EmailAuthProvider
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import ru.osipov.myinsagran.R
 import ru.osipov.myinsagran.models.User
-import ru.osipov.myinsagran.utils.CameraPictureTaker
+import ru.osipov.myinsagran.utils.CameraHelper
 import ru.osipov.myinsagran.utils.FirebaseHelper
 import ru.osipov.myinsagran.utils.ValueEventListenerAdapter
 import ru.osipov.myinsagran.views.PasswordDialog
@@ -19,7 +18,7 @@ class EditProfileActivity : AppCompatActivity(), PasswordDialog.Listener {
 
     private lateinit var mUser: User
     private lateinit var mPendingUser: User
-    private lateinit var cameraPictureTaker: CameraPictureTaker
+    private lateinit var cameraHelper: CameraHelper
     private lateinit var mFirebaseHelper: FirebaseHelper
 
 
@@ -28,12 +27,12 @@ class EditProfileActivity : AppCompatActivity(), PasswordDialog.Listener {
         setContentView(R.layout.activity_edit_profile)
         Log.d(TAG, "EditProfileActivity")
 
-        cameraPictureTaker = CameraPictureTaker(this)
+        cameraHelper = CameraHelper(this)
 
         close_image.setOnClickListener {finish()}
         save_image.setOnClickListener{updateProfile()}
         change_photo_text.setOnClickListener {
-            cameraPictureTaker.takeCameraPicture()
+            cameraHelper.takeCameraPicture()
         }
 
         mFirebaseHelper = FirebaseHelper(this)
@@ -53,11 +52,11 @@ class EditProfileActivity : AppCompatActivity(), PasswordDialog.Listener {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == cameraPictureTaker.REQUEST_CODE && resultCode == Activity.RESULT_OK){
+        if (requestCode == cameraHelper.REQUEST_CODE && resultCode == Activity.RESULT_OK){
 
             val uid = mFirebaseHelper.mAuth.currentUser!!.uid
 
-            mFirebaseHelper.mStorage.child("users/$uid/photo").putFile(cameraPictureTaker.imageUri!!).addOnCompleteListener {
+            mFirebaseHelper.mStorage.child("users/$uid/photo").putFile(cameraHelper.imageUri!!).addOnCompleteListener {
                 if (it.isSuccessful) {
                     val downloadTask = it.result!!.metadata!!.reference!!.downloadUrl
                     downloadTask.addOnSuccessListener { uri ->
