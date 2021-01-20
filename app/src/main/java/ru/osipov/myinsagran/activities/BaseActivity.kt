@@ -44,4 +44,11 @@ abstract class BaseActivity(val navNumber: Int) : AppCompatActivity() {
         }
         bottom_navigation_view.menu.getItem(navNumber).isChecked = true
     }
+
+    override fun onStart() {
+        super.onStart()
+        if  (bottom_navigation_view != null){
+            bottom_navigation_view.menu.getItem(navNumber).isChecked = true
+        }
+    }
 }
